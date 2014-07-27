@@ -1,0 +1,16 @@
+[
+{
+  "modid": "kina_RedstoneExtension",
+  "name": "RedstoneExtension",
+  "description": "For More Useful Redstone",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://forum.minecraftuser.jp/viewtopic.php?f=13&t=12084",
+  "updateUrl": "",
+  "authors": ["Kina"],
+  "credits": "CrafterKina",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
