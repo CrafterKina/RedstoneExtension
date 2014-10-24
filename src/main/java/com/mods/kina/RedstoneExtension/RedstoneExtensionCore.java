@@ -32,7 +32,12 @@ public class RedstoneExtensionCore{
     public static Block blockBlockDispenser;
     public static Block blockMoonlightDetector;
     public static Block blockTransportDropper;
-    public static Block blockLongChest;
+    //public static Block blockLongChest;
+    //public static Block blockCrank;
+    public static Block blockDownwardPressurePlate;
+    public static Block blockRotaryMachine;
+    public static Item itemPartComminution;
+    public static Item itemPartAMTProcessor;
     public static RERegistrarCore RERegistrarCore = new RERegistrarCore();
 
     @Mod.EventHandler
@@ -55,6 +60,7 @@ public class RedstoneExtensionCore{
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event){
+        proxy.loadModRecipe();
     }
 
     public void setBlock(){
@@ -74,7 +80,7 @@ public class RedstoneExtensionCore{
     }
 
     public boolean isNotIgnoreItem(int i){
-        if(!ignoreItems.equals("")){
+        if(!ignoreItems.isEmpty()){
             for(String a : getIgnoreString(ignoreItems)){
                 Item item1 = (Item) Item.itemRegistry.getObject(a);
                 Item item = Item.getItemById(i);

@@ -61,34 +61,34 @@ public class BlockTransportDropperRender implements ISimpleBlockRenderingHandler
         //double[] a={block.getBlockBoundsMinX(),block.getBlockBoundsMinY(),block.getBlockBoundsMinZ(),block.getBlockBoundsMaxX(),block.getBlockBoundsMaxY(),block.getBlockBoundsMaxZ()};
         switch(getFace(meta)){
             case 4:
-                renderblocks.setRenderBounds(f0 * 2, 0, 0, 1, 1, 1);
+                renderblocks.setRenderBounds(f0 * 2, 0, 0, 1, 1, 1);break;
             case 0:
-                renderblocks.setRenderBounds(0, f0 * 2, 0, 1, 1, 1);
+                renderblocks.setRenderBounds(0, f0 * 2, 0, 1, 1, 1);break;
             case 2:
-                renderblocks.setRenderBounds(0, 0, f0 * 2, 1, 1, 1);
+                renderblocks.setRenderBounds(0, 0, f0 * 2, 1, 1, 1);break;
             case 5:
-                renderblocks.setRenderBounds(0, 0, 0, f0 * 14, 1, 1);
+                renderblocks.setRenderBounds(0, 0, 0, f0 * 14, 1, 1);break;
             case 1:
-                renderblocks.setRenderBounds(0, 0, 0, 1, f0 * 14, 1);
+                renderblocks.setRenderBounds(0, 0, 0, 1, f0 * 14, 1);break;
             case 3:
-                renderblocks.setRenderBounds(0, 0, 0, 1, 1, f0 * 14);
+                renderblocks.setRenderBounds(0, 0, 0, 1, 1, f0 * 14);break;
         }
         renderAllFace(renderblocks, i, j, k, block, tessellator, glassTex, true);
 
         //renderblocks.setRenderBounds(0.0F, 0.0F, 0.0F, 1.0F, f0 * 2.0F, 1.0F);
         switch(getFace(meta)){
             case 4:
-                renderblocks.setRenderBounds(0, 0, 0, f0 * 2, 1, 1);
+                renderblocks.setRenderBounds(0, 0, 0, f0 * 2, 1, 1);break;
             case 0:
-                renderblocks.setRenderBounds(0, 0, 0, 1, f0 * 2, 1);
+                renderblocks.setRenderBounds(0, 0, 0, 1, f0 * 2, 1);break;
             case 2:
-                renderblocks.setRenderBounds(0, 0, 0, 1, 1, f0 * 2);
+                renderblocks.setRenderBounds(0, 0, 0, 1, 1, f0 * 2);break;
             case 5:
-                renderblocks.setRenderBounds(f0 * 14, 1, 1, 1, 0, 0);
+                renderblocks.setRenderBounds(f0 * 14, 1, 1, 1, 0, 0);break;
             case 1:
-                renderblocks.setRenderBounds(1, f0 * 14, 1, 0, 1, 0);
+                renderblocks.setRenderBounds(1, f0 * 14, 1, 0, 1, 0);break;
             case 3:
-                renderblocks.setRenderBounds(1, 1, f0 * 14, 0, 0, 1);
+                renderblocks.setRenderBounds(1, 1, f0 * 14, 0, 0, 1);break;
         }
         renderAllFace(renderblocks, i, j, k, block, tessellator, baseTex, true);
 

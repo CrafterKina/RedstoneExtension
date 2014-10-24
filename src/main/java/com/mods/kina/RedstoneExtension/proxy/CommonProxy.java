@@ -1,10 +1,13 @@
 package com.mods.kina.RedstoneExtension.proxy;
 
 import com.mods.kina.RedstoneExtension.container.ContainerBlockDispenser;
+import com.mods.kina.RedstoneExtension.container.ContainerRotaryMachine;
 import com.mods.kina.RedstoneExtension.container.ContainerTransportDropper;
 import com.mods.kina.RedstoneExtension.gui.GuiBlockDispenser;
+import com.mods.kina.RedstoneExtension.gui.GuiRotaryMachine;
 import com.mods.kina.RedstoneExtension.gui.GuiTransportDropper;
 import com.mods.kina.RedstoneExtension.tileentity.TileEntityBlockDispenser;
+import com.mods.kina.RedstoneExtension.tileentity.TileEntityRotaryMachine;
 import com.mods.kina.RedstoneExtension.tileentity.TileEntityTransportDropper;
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,6 +26,7 @@ public class CommonProxy implements IGuiHandler{
             switch(ID){
                 case 0:return new ContainerBlockDispenser(player.inventory, (TileEntityBlockDispenser) world.getTileEntity(x, y, z));
                 case 1:return new ContainerTransportDropper(player.inventory, (TileEntityTransportDropper) world.getTileEntity(x, y, z));
+                case 2:return new ContainerRotaryMachine(player.inventory,(TileEntityRotaryMachine)world.getTileEntity(x,y,z));
             }
         }
         return null;
@@ -36,8 +40,11 @@ public class CommonProxy implements IGuiHandler{
             switch(ID){
                 case 0: return new GuiBlockDispenser(player.inventory, (TileEntityBlockDispenser) world.getTileEntity(x, y, z));
                 case 1: return new GuiTransportDropper(player.inventory, (TileEntityTransportDropper) world.getTileEntity(x, y, z));
+                case 2: return new GuiRotaryMachine(player.inventory,(TileEntityRotaryMachine)world.getTileEntity(x,y,z));
             }
         }
         return null;
     }
+
+    public void loadModRecipe(){}
 }

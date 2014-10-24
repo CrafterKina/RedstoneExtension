@@ -13,7 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import java.util.Random;
 
-public class TileEntityBlockDispenser extends TileEntity implements IInventory{//ok
+public class TileEntityBlockDispenser extends TileEntity implements IInventory{
     protected String field_146020_a;
     private ItemStack[] field_146022_i = new ItemStack[9];
     private Random field_146021_j = new Random();

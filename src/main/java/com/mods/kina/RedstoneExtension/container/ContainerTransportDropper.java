@@ -8,7 +8,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class ContainerTransportDropper extends Container{
-    private static TileEntityTransportDropper dropper;
+    private TileEntityTransportDropper dropper;
 
     public ContainerTransportDropper(IInventory inventory, TileEntityTransportDropper transportDropper){
         dropper = transportDropper;
@@ -63,7 +63,7 @@ public class ContainerTransportDropper extends Container{
         return itemstack;
     }
 
-    public static TileEntityTransportDropper getDropper(){
+    public TileEntityTransportDropper getDropper(){
         return dropper;
     }
 }

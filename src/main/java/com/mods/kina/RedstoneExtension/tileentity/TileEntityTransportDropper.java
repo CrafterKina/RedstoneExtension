@@ -5,13 +5,10 @@ import com.mods.kina.RedstoneExtension.renderer.BlockTransportDropperRender;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.command.IEntitySelector;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -27,8 +24,6 @@ import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.util.List;
 
 public class TileEntityTransportDropper extends TileEntity implements IHopper{
@@ -233,7 +228,7 @@ public class TileEntityTransportDropper extends TileEntity implements IHopper{
      Args: inventory, item, slot, side
      */
     protected static boolean canInsertItemToInventory(IInventory par0IInventory, ItemStack par1ItemStack, int par2, int par3){
-        return par0IInventory.isItemValidForSlot(par2, par1ItemStack) && (!(par0IInventory instanceof ISidedInventory) || ((ISidedInventory)par0IInventory).canInsertItem(par2, par1ItemStack, par3));
+        return par0IInventory.isItemValidForSlot(par2, par1ItemStack) && (!(par0IInventory instanceof ISidedInventory) || ((ISidedInventory) par0IInventory).canInsertItem(par2, par1ItemStack, par3));
     }
 
     //吸い込み対象のインベントリ。SidedInventoryの材料スロットやホッパー系からの搬入は禁止。
@@ -322,13 +317,12 @@ public class TileEntityTransportDropper extends TileEntity implements IHopper{
     }
 
     protected static boolean areItemStacksEqualItem(ItemStack par0ItemStack, ItemStack par1ItemStack){
-        return par0ItemStack.isItemEqual(par1ItemStack) &&  par0ItemStack.stackSize <= par0ItemStack.getMaxStackSize() && ItemStack.areItemStackTagsEqual(par0ItemStack, par1ItemStack);
+        return par0ItemStack.isItemEqual(par1ItemStack) && par0ItemStack.stackSize <= par0ItemStack.getMaxStackSize() && ItemStack.areItemStackTagsEqual(par0ItemStack, par1ItemStack);
     }
 
     //Inventory
     @Override
     public int getSizeInventory(){
-
         return hopperItemStacks.length;
     }
 
@@ -337,14 +331,12 @@ public class TileEntityTransportDropper extends TileEntity implements IHopper{
         if(i < getSizeInventory()){
             return hopperItemStacks[i];
         }else return null;
-
     }
 
     @Override
     public ItemStack decrStackSize(int i, int j){
         if(hopperItemStacks[i] != null){
             ItemStack itemstack;
-
             if(hopperItemStacks[i].stackSize <= j){
                 itemstack = hopperItemStacks[i].copy();
                 hopperItemStacks[i].stackSize = 0;
@@ -379,7 +371,6 @@ public class TileEntityTransportDropper extends TileEntity implements IHopper{
     public void setInventorySlotContents(int i, ItemStack itemstack){
         if(i < 5){
             hopperItemStacks[i] = itemstack;
-
             if(itemstack != null && itemstack.stackSize > getInventoryStackLimit()){
                 itemstack.stackSize = getInventoryStackLimit();
             }
@@ -402,27 +393,22 @@ public class TileEntityTransportDropper extends TileEntity implements IHopper{
 
     @Override
     public int getInventoryStackLimit(){
-
         return 64;
     }
 
     @Override
     public boolean isUseableByPlayer(EntityPlayer entityplayer){
-
         return worldObj.getTileEntity(xCoord, yCoord, zCoord) == this && entityplayer.getDistanceSq((double) xCoord + 0.5D, (double) yCoord + 0.5D, (double) zCoord + 0.5D) <= 64.0D;
     }
 
     public void openInventory(){
-
     }
 
     public void closeInventory(){
-
     }
 
     @Override
     public boolean isItemValidForSlot(int i, ItemStack itemstack){
-
         return true;
     }
 
@@ -455,12 +441,9 @@ public class TileEntityTransportDropper extends TileEntity implements IHopper{
     @Override
     public void markDirty(){
         super.markDirty();
-        @SuppressWarnings("unchecked")
-        List<EntityPlayer> list= worldObj.playerEntities;
-        for (EntityPlayer player : list) {
-            if (player instanceof EntityPlayerMP) {
-                ((EntityPlayerMP)player).playerNetServerHandler.sendPacket(getDescriptionPacket());
-            }
-        }
+        @SuppressWarnings("unchecked") List<EntityPlayer> list = worldObj.playerEntities;
+        for(EntityPlayer player : list)
+            if(player instanceof EntityPlayerMP)
+                ((EntityPlayerMP) player).playerNetServerHandler.sendPacket(getDescriptionPacket());
     }
 }

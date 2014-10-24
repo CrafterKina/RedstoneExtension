@@ -1,15 +1,16 @@
 package com.mods.kina.RedstoneExtension.registry;
 
-import com.mods.kina.RedstoneExtension.blocks.BlockBlockDispenser;
-import com.mods.kina.RedstoneExtension.blocks.BlockMoonlightDetector;
-import com.mods.kina.RedstoneExtension.blocks.BlockTransportDropper;
+import com.mods.kina.RedstoneExtension.blocks.*;
+import com.mods.kina.RedstoneExtension.item.parts.PartComminution;
+import com.mods.kina.RedstoneExtension.link.amt.PartAMTProcessor;
 import com.mods.kina.RedstoneExtension.tileentity.TileEntityBlockDispenser;
 import com.mods.kina.RedstoneExtension.tileentity.TileEntityMoonlightDetector;
-import com.mods.kina.RedstoneExtension.tileentity.TileEntityTransportDropper;
-import static com.mods.kina.RedstoneExtension.RedstoneExtensionCore.*;
+import com.mods.kina.RedstoneExtension.tileentity.TileEntityRotaryMachine;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+
+import static com.mods.kina.RedstoneExtension.RedstoneExtensionCore.*;
 
 public class RERegistrarCore{
     public RERegistrarCore(){super();}
@@ -17,15 +18,27 @@ public class RERegistrarCore{
         blockBlockDispenser = new BlockBlockDispenser();
         blockMoonlightDetector = new BlockMoonlightDetector();
         blockTransportDropper = new BlockTransportDropper();
-        GameRegistry.registerBlock(blockBlockDispenser, "kina_blockBlockDispenser");
-        GameRegistry.registerBlock(blockMoonlightDetector, "kina_blockMoonlightDetector");
-        GameRegistry.registerBlock(blockTransportDropper, "kina_blockTransportDropper");
+        //blockCrank=new BlockCrank();
+        blockDownwardPressurePlate=new BlockDownwardPressurePlate();
+        blockRotaryMachine=new BlockRotaryMachine();
+        itemPartComminution=new PartComminution();
+        itemPartAMTProcessor=new PartAMTProcessor();
+        GameRegistry.registerBlock(blockBlockDispenser, "blockBlockDispenser");
+        GameRegistry.registerBlock(blockMoonlightDetector, "blockMoonlightDetector");
+        GameRegistry.registerBlock(blockTransportDropper, "blockTransportDropper");
+        //GameRegistry.registerBlock(blockCrank,"blockCrank");
+        GameRegistry.registerBlock(blockDownwardPressurePlate,"blockDownwardPressurePlate");
+        GameRegistry.registerBlock(blockRotaryMachine,"blockRotaryMachine");
+        GameRegistry.registerItem(itemPartComminution,"itemPartComminution");
+        GameRegistry.registerItem(itemPartAMTProcessor,"itemPartAMTProcessor");
     }
 
     public void registryTile(){
         GameRegistry.registerTileEntity(TileEntityBlockDispenser.class, "TileEntityBlockDispenser");
         GameRegistry.registerTileEntity(TileEntityMoonlightDetector.class, "TileEntityMoonlightDetector");
+        //GameRegistry.registerTileEntity(TileEntityCrank.class,"");
         //GameRegistry.registerTileEntity(TileEntityTransportDropper.class,"TileEntityTransportDropper");
+        GameRegistry.registerTileEntity(TileEntityRotaryMachine.class,"TileEntityRotaryMachine");
     }
 
     public void registryRecipe(){
