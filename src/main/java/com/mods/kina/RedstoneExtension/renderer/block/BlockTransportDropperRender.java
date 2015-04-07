@@ -1,6 +1,5 @@
-package com.mods.kina.RedstoneExtension.renderer;
+package com.mods.kina.RedstoneExtension.renderer.block;
 
-import com.mods.kina.RedstoneExtension.RedstoneExtensionCore;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -128,6 +127,6 @@ public class BlockTransportDropperRender implements ISimpleBlockRenderingHandler
     }
 
     public int getRenderId(){
-        return RedstoneExtensionCore.RenderType;
+        return EnumRenderType.TransportDropper.getType();
     }
 }

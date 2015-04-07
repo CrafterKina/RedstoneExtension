@@ -1,7 +1,7 @@
 package com.mods.kina.RedstoneExtension.tileentity;
 
 import com.mods.kina.RedstoneExtension.blocks.BlockTransportDropper;
-import com.mods.kina.RedstoneExtension.renderer.BlockTransportDropperRender;
+import com.mods.kina.RedstoneExtension.renderer.block.BlockTransportDropperRender;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.command.IEntitySelector;
@@ -155,7 +155,6 @@ public class TileEntityTransportDropper extends TileEntity implements IHopper{
     }
 
     //for hopper contents
-    //RHopperから送り出す
     protected boolean insertItemToInventory(){
         //バニラホッパーの挙動
         IInventory iinventory = getOutputInventory();

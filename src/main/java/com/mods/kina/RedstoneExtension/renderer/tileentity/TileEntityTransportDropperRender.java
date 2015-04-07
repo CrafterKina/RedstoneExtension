@@ -1,4 +1,4 @@
-package com.mods.kina.RedstoneExtension.renderer;
+package com.mods.kina.RedstoneExtension.renderer.tileentity;
 
 import com.mods.kina.RedstoneExtension.tileentity.TileEntityTransportDropper;
 import cpw.mods.fml.common.registry.GameRegistry;

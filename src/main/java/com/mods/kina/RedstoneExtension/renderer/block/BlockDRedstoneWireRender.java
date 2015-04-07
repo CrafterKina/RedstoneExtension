@@ -1,4 +1,4 @@
-package com.mods.kina.RedstoneExtension.renderer;
+package com.mods.kina.RedstoneExtension.renderer.block;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import net.minecraft.block.Block;

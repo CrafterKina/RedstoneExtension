@@ -12,7 +12,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -28,14 +27,6 @@ public class RedstoneExtensionCore{
     public static CommonProxy proxy;
     public static boolean isEnable;
     public static String ignoreItems;
-    public static int RenderType;
-    public static Block blockBlockDispenser;
-    public static Block blockMoonlightDetector;
-    public static Block blockTransportDropper;
-    //public static Block blockLongChest;
-    //public static Block blockCrank;
-    public static Block blockDownwardPressurePlate;
-    public static Block blockRotaryMachine;
     public static Item itemPartComminution;
     public static Item itemPartAMTProcessor;
     public static RERegistrarCore RERegistrarCore = new RERegistrarCore();
@@ -52,6 +43,7 @@ public class RedstoneExtensionCore{
         proxy.registerTileEntitySpecialRenderer();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy);
         RERegistrarCore.registryRecipe();
+
         if(isEnable){
             setTool();
             setBlock();

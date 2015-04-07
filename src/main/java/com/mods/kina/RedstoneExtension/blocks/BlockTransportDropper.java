@@ -2,6 +2,7 @@ package com.mods.kina.RedstoneExtension.blocks;
 
 import com.mods.kina.KinaCore.toExtends.BlockBreakableContainer;
 import com.mods.kina.RedstoneExtension.RedstoneExtensionCore;
+import com.mods.kina.RedstoneExtension.renderer.block.EnumRenderType;
 import com.mods.kina.RedstoneExtension.tileentity.TileEntityBlockDispenser;
 import com.mods.kina.RedstoneExtension.tileentity.TileEntityTransportDropper;
 import cpw.mods.fml.relauncher.Side;
@@ -48,7 +49,7 @@ public class BlockTransportDropper extends BlockBreakableContainer{
 
     public int getRenderType()
     {
-        return RedstoneExtensionCore.RenderType;
+        return EnumRenderType.TransportDropper.getType();
     }
 
     @SideOnly(Side.CLIENT)
